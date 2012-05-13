@@ -94,3 +94,286 @@ Served asset /home.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:27:20 +0530 2012
 Served asset /application.js - 304 Not Modified (6ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateChallenges (20120513110303)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "input" varchar(255), "output" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120513110303')
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("challenges")
+
+
+Started GET "/" for 127.0.0.1 at Sun May 13 16:40:51 +0530 2012
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Compiled challenges.css  (2ms)  (pid 1941)
+Compiled scaffolds.css  (20ms)  (pid 1941)
+Compiled application.css  (68ms)  (pid 1941)
+Compiled challenges.js  (93ms)  (pid 1941)
+Compiled application.js  (104ms)  (pid 1941)
+Completed 200 OK in 207ms (Views: 207.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/challenges.css?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /challenges.css - 200 OK (2ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /game.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/challenges.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /challenges.js - 200 OK (1ms)
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /game.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:40:52 +0530 2012
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/challenges" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.1ms)[0m  [1mSELECT "challenges".* FROM "challenges" [0m
+  Rendered challenges/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.css?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /challenges.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /game.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /challenges.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /game.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:40:57 +0530 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/challenges/new" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Processing by ChallengesController#new as HTML
+  Rendered challenges/_form.html.erb (4.4ms)
+  Rendered challenges/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.css?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /challenges.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /game.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /challenges.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /game.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:40:59 +0530 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/challenges" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Processing by ChallengesController#create as HTML
+  Parameters: {"authenticity_token"=>"5t8ceVOIQxaUvVh1kJTuK4Nbe5RXBM5EB4w390IT8ag=", "commit"=>"Create Challenge", "utf8"=>"✓", "challenge"=>{"output"=>"'helloworld'", "input"=>"a = 'hello'  b= 'world'"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "challenges" ("created_at", "input", "output", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 13 May 2012 11:11:45 UTC +00:00], ["input", "a = 'hello'  b= 'world'"], ["output", "'helloworld'"], ["updated_at", Sun, 13 May 2012 11:11:45 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/challenges/1
+Completed 302 Found in 7ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/challenges/1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChallenge Load (0.2ms)[0m  [1mSELECT "challenges".* FROM "challenges" WHERE "challenges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered challenges/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.css?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /challenges.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /game.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /challenges.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /game.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:41:45 +0530 2012
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/challenges" for 127.0.0.1 at Sun May 13 16:42:17 +0530 2012
+Processing by ChallengesController#index as HTML
+  [1m[35mChallenge Load (0.2ms)[0m  SELECT "challenges".* FROM "challenges" 
+  Rendered challenges/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.css?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /challenges.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.css?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /game.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/challenges.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /challenges.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/game.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /game.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sun May 13 16:42:18 +0530 2012
+Served asset /application.js - 304 Not Modified (0ms)

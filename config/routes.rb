@@ -1,4 +1,6 @@
 Playwithruby::Application.routes.draw do
+  resources :challenges
+
   get "home/index"
 
   # The priority is based upon order of creation:

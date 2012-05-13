@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Input:</b>
+  <%= @challenge.input %>
+</p>
+
+<p>
+  <b>Output:</b>
+  <%= @challenge.output %>
+</p>
+
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>

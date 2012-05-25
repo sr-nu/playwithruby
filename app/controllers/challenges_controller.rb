@@ -1,6 +1,8 @@
 class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
+
+  @@counter = 1
   def index
     @challenges = Challenge.all
 
@@ -24,14 +26,8 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   # GET /challenges/new.json
   def new
-    @counter = 0
-    @score = 0
     @challenge = Challenge.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @challenge }
-    end
+    @questionaire ||= Questionaire.first
   end
 
   # GET /challenges/1/edit
@@ -42,10 +38,14 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    @challenge = Challenge.create(params[:challenge])
-    @counter ++
-    evaluate_score(@challenge)
-    @counter == 10 ? render(:display_result) : render(:new)
+    @@counter += 1
+    @questionaire = Questionaire.where("id > (?)",params["challenge"]["questionaire_id"]).first
+    p 's'*100
+    p @@counter
+    @@counter >= 10 ? render(:display_result) : redirect_to(new_challenge_path)
+  end
+
+  def display_result
   end
 
   # PUT /challenges/1
@@ -80,7 +80,7 @@ class ChallengesController < ApplicationController
 
   def evaluate_score(challenge)
     expected_answer = Questionaire.find(challenge.questionaire_id).answer
-    if challenge.answer == expected_answer
+    if challenge.output == expected_answer
       @score = @score + 1
     end
   end

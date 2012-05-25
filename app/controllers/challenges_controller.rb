@@ -24,6 +24,8 @@ class ChallengesController < ApplicationController
   # GET /challenges/new
   # GET /challenges/new.json
   def new
+    @counter = 0
+    @score = 0
     @challenge = Challenge.new
 
     respond_to do |format|
@@ -40,17 +42,10 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    @challenge = Challenge.new(params[:challenge])
-
-    respond_to do |format|
-      if @challenge.save
-        format.html { redirect_to @challenge, :notice => 'Challenge was successfully created.' }
-        format.json { render :json => @challenge, :status => :created, :location => @challenge }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @challenge.errors, :status => :unprocessable_entity }
-      end
-    end
+    @challenge = Challenge.create(params[:challenge])
+    @counter ++
+    evaluate_score(@challenge)
+    @counter == 10 ? render(:display_result) : render(:new)
   end
 
   # PUT /challenges/1
@@ -78,6 +73,15 @@ class ChallengesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to challenges_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def evaluate_score(challenge)
+    expected_answer = Questionaire.find(challenge.questionaire_id).answer
+    if challenge.answer == expected_answer
+      @score = @score + 1
     end
   end
 end

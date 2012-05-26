@@ -1,13 +1,25 @@
-<h1>New challenge</h1>
-<%=@questionaire.question %> 
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/"><font color="#ffffff">PlayWithRuby</font></a>
+    </div>
+  </div>
+</div>
+
+<div><h2>New challenge</h2></div>
+<div><h2><%=@questionaire.question %></h2></div>
 <%= form_for(@challenge) do |f| %>
   <div class="field">
-    <%= f.label :input %><br />
-    <%= f.text_field :input %>
-    <%= f.hidden_field :questionaire_id, :value => @questionaire.id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<%= link_to 'Back', challenges_path %>
+    <div class="container editor">
+      <div class="editorArea">
+        <div class="editorArea">
+          <%= f.text_area :input %>
+        </div>
+        <%= f.hidden_field :questionaire_id, :value => @questionaire.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Save", :class => '"btn btn-large btn-primary'%>
+      </div>
+    <% end %>
+    <%= link_to 'Back', challenges_path %>
+    <%= stylesheet_link_tag 'bootstrap', 'docs' %>

@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div><h2>New challenge</h2></div>
+<div><h2>Question <%=@count%></h2></div>
 <div><h2><%=@questionaire.question %></h2></div>
 <%= form_for(@challenge) do |f| %>
   <div class="field">
@@ -18,8 +18,7 @@
         <%= f.hidden_field :questionaire_id, :value => @questionaire.id %>
       </div>
       <div class="actions">
-        <%= f.submit "Save", :class => '"btn btn-large btn-primary'%>
+        <%= f.submit "next", :class => '"btn btn-large btn-primary'%>
       </div>
     <% end %>
-    <%= link_to 'Back', challenges_path %>
     <%= stylesheet_link_tag 'bootstrap', 'docs' %>

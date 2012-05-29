@@ -1,19 +1,17 @@
 class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
-  @@count = 1
+  # @@count = 1
 
   def new
-    @count = @@count
     @challenge = Challenge.new
     @questionaire ||= Questionaire.first
   end
 
   def create
     @questionaire = Questionaire.where("id > (?)",params["challenge"]["questionaire_id"]).first
-    @@count = @@count + 1
-    @count = @@count
-    @@count > 10 ? render(:display_result) : redirect_to(new_challenge_path)
+    Challenge.new(params[:challenge]).save
+    Challenge.count > 10 ? render(:display_result) : redirect_to(new_challenge_path)
   end
 
   def display_result
